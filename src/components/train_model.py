@@ -155,6 +155,6 @@ if __name__=="__main__":
     with open('artifacts/data.pkl', 'rb') as f:
         data = pickle.load(f)
     for i in data:
-        gen[i] = train(data[i],iters=2000)
+        gen[i] = train(data[i])
     with open('artifacts/model.pkl', 'wb') as f:
         pickle.dump(gen, f)

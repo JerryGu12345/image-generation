@@ -12,8 +12,9 @@
 Input data should be a .pkl file of a dictionary mapping chars to nx28x28 tensors representing n corresponding handwritten digits.
 
 If no data is provided, the models trained on 
-<a href='https://www.kaggle.com/datasets/dhruvildave/english-handwritten-characters-dataset'>this</a> dataset will be used
-to generate images.
+<a href='https://www.kaggle.com/datasets/oddrationale/mnist-in-csv'>this</a> dataset will be used
+to generate images. 
+(will use <a href='https://www.kaggle.com/datasets/dhruvildave/english-handwritten-characters-dataset'>this</a> dataset soon)
 
 <form action="/train" method='post'enctype="multipart/form-data">
   <label for="val">val:</label><br>
@@ -24,7 +25,7 @@ to generate images.
 
 <h2>Generate images</h2>
 
-Currently does not support special chars other than spaces.
+Currently only supports numbers and spaces.
 
 <form action="/generate" method='post'>
   <label for="val">val:</label><br>

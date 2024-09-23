@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+        <script rel="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+        </script>
+    </head>
+<body>
+
+<h2>Load data and train models</h2>
+
+Input data should be a .pkl file of a dictionary mapping chars to nx28x28 tensors representing n corresponding handwritten digits.
+
+If no data is provided, the models trained on 
+<a href='https://www.kaggle.com/datasets/dhruvildave/english-handwritten-characters-dataset'>this</a> dataset will be used
+to generate images.
+
+<form action="/train" method='post'enctype="multipart/form-data">
+  <label for="val">val:</label><br>
+  <input type="text" id="val" name="val" value="1000"><br>
+  <input type="file" name="file" autocomplete="off">
+  <input type="submit" value="Submit">
+</form> 
+
+<h2>Generate images</h2>
+
+Currently does not support special chars other than spaces.
+
+<form action="/generate" method='post'>
+  <label for="val">val:</label><br>
+  <input type="text" id="val" name="val" value="0"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+{% if filename %}
+<div>
+    <img src="{{ url_for('display', filename=filename) }}">
+</div>
+{% endif %}
+
+
+
+
+</body>
+</html>

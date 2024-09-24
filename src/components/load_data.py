@@ -2,7 +2,6 @@ import os
 import numpy as np
 import pandas as pd
 import torch
-from torchvision import transforms
 import pickle
 from PIL import Image
 

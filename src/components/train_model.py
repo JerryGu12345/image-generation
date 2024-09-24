@@ -4,15 +4,10 @@ from timeit import default_timer as timer
 import numpy as np
 import pandas as pd
 import torch
-import torchvision
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
-import torchvision.datasets as datasets
-import torchvision.transforms as transforms
 from torch.utils.data import DataLoader, random_split
-from torchvision.datasets import MNIST
-from torch.utils.tensorboard import SummaryWriter
 import matplotlib.pyplot as plt
 import pickle
 

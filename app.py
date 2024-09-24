@@ -6,9 +6,9 @@ import pickle
 from src.components.load_data import load
 from src.components.generate_image import generate
 from src.components.train_model import Generator, train
-os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
-app = Flask(__name__, static_folder="C:\\Users\\jerry\\Downloads\\Personal_Projects\\Image_Generation\\templates\\static")
+
+app = Flask(__name__, static_folder="templates\\static")
 
 @app.route('/')
 def index():
@@ -49,4 +49,5 @@ def display(filename):
     return redirect(url_for('static', filename=filename))
  
 if __name__ == "__main__":
-    app.run(debug=True)
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+    app.run(host='0.0.0.0')
